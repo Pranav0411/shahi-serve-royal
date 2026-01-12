@@ -38,7 +38,7 @@ const trustFeatures = [
 
 export const TrustSection = () => {
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden bg-royal-cream">
+    <section className="py-20 lg:py-28 relative overflow-hidden bg-royal-navy">
       {/* Subtle Pattern Overlay */}
       <div 
         className="absolute inset-0 opacity-5"
@@ -106,17 +106,17 @@ export const TrustSection = () => {
           >
             {/* Section Header */}
             <div className="mb-10">
-              <span className="inline-block text-royal-gold-rich font-medium tracking-widest uppercase text-sm mb-4">
+              <span className="inline-block text-royal-gold font-medium tracking-widest uppercase text-sm mb-4">
                 Why Choose Us
               </span>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-royal-navy leading-tight mb-4">
-                The <span className="text-royal-gold-rich italic">Royal</span> Promise
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-royal-cream-light leading-tight mb-4">
+                The <span className="text-royal-gold italic">Royal</span> Promise
               </h2>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-1 bg-royal-gold-rich rounded-full" />
-                <div className="w-3 h-3 bg-royal-gold-rich rotate-45" />
+                <div className="w-12 h-1 bg-royal-gold rounded-full" />
+                <div className="w-3 h-3 bg-royal-gold rotate-45" />
               </div>
-              <p className="text-royal-navy/70 text-lg">
+              <p className="text-royal-cream/70 text-lg">
                 Every aspect of our process is designed to bring you the authentic royal experience.
               </p>
             </div>
@@ -130,7 +130,7 @@ export const TrustSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="group flex items-start gap-4 p-4 rounded-xl hover:bg-royal-navy/5 transition-colors duration-300"
+                  className="group flex items-start gap-4 p-4 rounded-xl hover:bg-royal-navy-light/50 transition-colors duration-300"
                 >
                   {/* Icon */}
                   <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-royal-navy to-royal-navy-light rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
@@ -139,17 +139,17 @@ export const TrustSection = () => {
                   
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="font-heading text-lg font-semibold text-royal-navy mb-1 group-hover:text-royal-gold-rich transition-colors duration-300">
+                    <h3 className="font-heading text-lg font-semibold text-royal-cream-light mb-1 group-hover:text-royal-gold transition-colors duration-300">
                       {feature.title}
                     </h3>
-                    <p className="text-royal-navy/60 text-sm">
+                    <p className="text-royal-cream/60 text-sm">
                       {feature.description}
                     </p>
                   </div>
                   
                   {/* Check Mark */}
-                  <div className="flex-shrink-0 w-8 h-8 bg-royal-gold/10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Check className="w-4 h-4 text-royal-gold-rich" />
+                  <div className="flex-shrink-0 w-8 h-8 bg-royal-gold/20 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Check className="w-4 h-4 text-royal-gold" />
                   </div>
                 </motion.div>
               ))}
