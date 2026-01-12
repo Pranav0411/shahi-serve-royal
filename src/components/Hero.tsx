@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import pattern from "@/assets/pattern.png";
 import productHero from "@/assets/product-galouti-3.jpg";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Pattern */}
+      {/* Background Product Image */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0"
         style={{ 
-          backgroundImage: `url(${pattern})`,
-          backgroundSize: '400px',
-          backgroundRepeat: 'repeat'
+          backgroundImage: `url(${productHero})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       />
       
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-royal-navy via-royal-navy/95 to-royal-navy-light" />
+      {/* Dark Gradient Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-royal-navy/95 via-royal-navy/80 to-royal-navy/40" />
       
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 pt-20">
