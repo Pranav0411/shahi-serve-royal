@@ -18,29 +18,28 @@ export const Hero = () => {
       />
       
       {/* Dark Gradient Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-royal-navy/95 via-royal-navy/80 to-royal-navy/40" />
+      <div className="absolute inset-0 bg-royal-navy/70" />
       
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 pt-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center lg:text-left"
           >
             {/* Brand Logo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="mb-6 flex justify-center lg:justify-start"
+              className="mb-6 flex justify-center"
             >
               <img 
                 src={logo} 
                 alt="Shahi Serve" 
-                className="h-24 md:h-32 lg:h-36 w-auto drop-shadow-2xl"
+                className="h-28 md:h-36 lg:h-44 w-auto drop-shadow-2xl"
               />
             </motion.div>
             
@@ -67,7 +66,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-royal-cream/80 text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-8"
+              className="text-royal-cream/80 text-lg md:text-xl max-w-2xl mx-auto mb-8"
             >
               Experience the grandeur of royal Indian cuisine. Succulent kebabs, 
               aromatic biryanis, and decadent curries — ready in minutes.
@@ -77,7 +76,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <button className="btn-royal text-lg px-10 py-4">
                 Order Your Feast
@@ -92,7 +91,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-wrap gap-6 justify-center lg:justify-start mt-10"
+              className="flex flex-wrap gap-6 justify-center mt-10"
             >
               {[
                 { icon: "⏱️", text: "Ready in 5 Mins" },
@@ -105,37 +104,6 @@ export const Hero = () => {
                 </div>
               ))}
             </motion.div>
-          </motion.div>
-          
-          {/* Hero Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative">
-              {/* Glow Effect */}
-              <div className="absolute -inset-4 bg-royal-gold/20 rounded-full blur-3xl" />
-              
-              {/* Image */}
-              <img
-                src={productHero}
-                alt="Royal Feast"
-                className="relative rounded-3xl shadow-2xl w-full h-auto object-cover"
-              />
-              
-              {/* Floating Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-                className="absolute -bottom-6 -left-6 bg-royal-gold-rich text-royal-navy px-6 py-4 rounded-2xl shadow-gold"
-              >
-                <p className="font-heading text-2xl font-bold">₹299</p>
-                <p className="text-sm opacity-80">Starting from</p>
-              </motion.div>
-            </div>
           </motion.div>
         </div>
       </div>
