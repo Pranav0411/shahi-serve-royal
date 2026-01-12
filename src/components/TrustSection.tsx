@@ -1,158 +1,174 @@
 import { motion } from "framer-motion";
-import { Clock, Leaf, Drumstick, ThermometerSun, Shield, Award } from "lucide-react";
+import { Clock, Leaf, Drumstick, ThermometerSun, Shield, Award, Check } from "lucide-react";
+import productImage from "@/assets/product-galouti-1.jpg";
 import pattern from "@/assets/pattern.png";
 
 const trustFeatures = [
   {
     icon: Clock,
     title: "Ready in 5 Minutes",
-    description: "From freezer to feast in just 5 minutes. Heat and enjoy!",
+    description: "From freezer to feast in just 5 minutes",
   },
   {
     icon: Leaf,
     title: "Zero Preservatives",
-    description: "All of the heritage, none of the preservatives.",
+    description: "All heritage, none of the chemicals",
   },
   {
     icon: Drumstick,
-    title: "100% Protein",
-    description: "Premium quality meat with 40g protein per serving.",
+    title: "100% Premium Protein",
+    description: "40g protein per serving guaranteed",
   },
   {
     icon: ThermometerSun,
     title: "Three Ways to Heat",
-    description: "Microwave, stove, or boiling water — your choice!",
+    description: "Microwave, stove, or boiling water",
   },
   {
     icon: Shield,
     title: "FSSAI Certified",
-    description: "Manufactured following highest food safety standards.",
+    description: "Highest food safety standards",
   },
   {
     icon: Award,
     title: "Royal Recipes",
-    description: "Authentic recipes from the royal kitchens of India.",
+    description: "Authentic royal kitchen heritage",
   },
 ];
 
 export const TrustSection = () => {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Background Pattern */}
+    <section className="py-20 lg:py-28 relative overflow-hidden bg-royal-cream">
+      {/* Subtle Pattern Overlay */}
       <div 
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-5"
         style={{ 
           backgroundImage: `url(${pattern})`,
-          backgroundSize: '300px',
+          backgroundSize: '200px',
           backgroundRepeat: 'repeat'
         }}
       />
       
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-royal-navy via-royal-navy-light/90 to-royal-navy" />
-      
-      {/* Decorative Gold Lines */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-royal-gold/50 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-royal-gold/50 to-transparent" />
-      
-      {/* Decorative Corner Ornaments */}
-      <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-royal-gold/30 rounded-tl-lg" />
-      <div className="absolute top-8 right-8 w-16 h-16 border-r-2 border-t-2 border-royal-gold/30 rounded-tr-lg" />
-      <div className="absolute bottom-8 left-8 w-16 h-16 border-l-2 border-b-2 border-royal-gold/30 rounded-bl-lg" />
-      <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-royal-gold/30 rounded-br-lg" />
-      
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          {/* Decorative Crown Icon */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left Side - Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-6"
+            transition={{ duration: 0.8 }}
+            className="relative"
           >
-            <span className="text-5xl">👑</span>
-          </motion.div>
-          
-          <span className="inline-block text-royal-gold font-medium tracking-[0.3em] uppercase text-sm mb-4 px-6 py-2 border border-royal-gold/30 rounded-full">
-            Why Choose Us
-          </span>
-          
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-royal-cream-light mt-6 mb-6">
-            The <span className="text-royal-gold italic">Royal</span> Promise
-          </h2>
-          
-          {/* Decorative Divider */}
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-royal-gold/60" />
-            <div className="w-3 h-3 bg-royal-gold rotate-45" />
-            <div className="w-16 h-px bg-gradient-to-l from-transparent to-royal-gold/60" />
-          </div>
-          
-          <p className="text-royal-cream/70 max-w-2xl mx-auto text-lg font-light italic">
-            "Every aspect of our process is designed to bring you the authentic royal experience."
-          </p>
-        </motion.div>
-
-        {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {trustFeatures.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative"
-            >
-              {/* Card */}
-              <div className="relative bg-gradient-to-br from-royal-navy-light/80 to-royal-navy/80 backdrop-blur-sm border border-royal-gold/20 rounded-xl p-8 hover:border-royal-gold/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(229,189,130,0.15)]">
-                {/* Corner Accents */}
-                <div className="absolute top-0 left-0 w-6 h-6 border-l border-t border-royal-gold/40 rounded-tl-xl" />
-                <div className="absolute top-0 right-0 w-6 h-6 border-r border-t border-royal-gold/40 rounded-tr-xl" />
-                <div className="absolute bottom-0 left-0 w-6 h-6 border-l border-b border-royal-gold/40 rounded-bl-xl" />
-                <div className="absolute bottom-0 right-0 w-6 h-6 border-r border-b border-royal-gold/40 rounded-br-xl" />
-                
-                {/* Icon */}
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-royal-gold/20 to-royal-gold/5 rounded-full flex items-center justify-center group-hover:from-royal-gold/30 group-hover:to-royal-gold/10 transition-all duration-500">
-                    <div className="w-12 h-12 bg-royal-navy border border-royal-gold/30 rounded-full flex items-center justify-center">
-                      <feature.icon className="w-6 h-6 text-royal-gold" />
-                    </div>
+            {/* Main Image Container */}
+            <div className="relative">
+              {/* Decorative Frame */}
+              <div className="absolute -inset-4 border-2 border-royal-gold/30 rounded-3xl" />
+              <div className="absolute -inset-8 border border-royal-gold/10 rounded-3xl hidden lg:block" />
+              
+              {/* Gold Accent Corner */}
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-royal-gold rounded-2xl -z-10" />
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-royal-navy rounded-2xl -z-10" />
+              
+              {/* Image */}
+              <img
+                src={productImage}
+                alt="Shahi Serve Premium Products"
+                className="rounded-2xl shadow-2xl w-full h-auto object-cover relative z-10"
+              />
+              
+              {/* Floating Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="absolute -bottom-8 -right-4 lg:-right-8 bg-royal-navy text-royal-cream-light px-6 py-4 rounded-2xl shadow-xl z-20"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-royal-gold/20 rounded-full flex items-center justify-center">
+                    <Check className="w-6 h-6 text-royal-gold" />
+                  </div>
+                  <div>
+                    <p className="font-heading text-lg font-bold">100%</p>
+                    <p className="text-sm text-royal-cream/70">Quality Assured</p>
                   </div>
                 </div>
-                
-                {/* Content */}
-                <h3 className="font-heading text-xl font-semibold text-royal-cream-light mb-3 group-hover:text-royal-gold transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-royal-cream/60 leading-relaxed">
-                  {feature.description}
-                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Right Side - USPs */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Section Header */}
+            <div className="mb-10">
+              <span className="inline-block text-royal-gold-rich font-medium tracking-widest uppercase text-sm mb-4">
+                Why Choose Us
+              </span>
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-royal-navy leading-tight mb-4">
+                The <span className="text-royal-gold-rich italic">Royal</span> Promise
+              </h2>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-1 bg-royal-gold-rich rounded-full" />
+                <div className="w-3 h-3 bg-royal-gold-rich rotate-45" />
               </div>
+              <p className="text-royal-navy/70 text-lg">
+                Every aspect of our process is designed to bring you the authentic royal experience.
+              </p>
+            </div>
+
+            {/* Features List */}
+            <div className="space-y-5">
+              {trustFeatures.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="group flex items-start gap-4 p-4 rounded-xl hover:bg-royal-navy/5 transition-colors duration-300"
+                >
+                  {/* Icon */}
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-royal-navy to-royal-navy-light rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                    <feature.icon className="w-6 h-6 text-royal-gold" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="font-heading text-lg font-semibold text-royal-navy mb-1 group-hover:text-royal-gold-rich transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-royal-navy/60 text-sm">
+                      {feature.description}
+                    </p>
+                  </div>
+                  
+                  {/* Check Mark */}
+                  <div className="flex-shrink-0 w-8 h-8 bg-royal-gold/10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Check className="w-4 h-4 text-royal-gold-rich" />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="mt-10"
+            >
+              <button className="btn-royal text-lg px-8 py-4">
+                Explore Our Menu
+              </button>
             </motion.div>
-          ))}
+          </motion.div>
         </div>
-        
-        {/* Bottom Decorative Element */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex items-center justify-center mt-16 gap-3"
-        >
-          <div className="w-24 h-px bg-gradient-to-r from-transparent to-royal-gold/40" />
-          <span className="text-royal-gold text-2xl">✦</span>
-          <div className="w-24 h-px bg-gradient-to-l from-transparent to-royal-gold/40" />
-        </motion.div>
       </div>
     </section>
   );
