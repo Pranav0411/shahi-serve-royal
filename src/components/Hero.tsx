@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import productHero from "@/assets/product-galouti-3.jpg";
+import logo from "@/assets/logo.png";
 
 export const Hero = () => {
   return (
@@ -29,6 +30,20 @@ export const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center lg:text-left"
           >
+            {/* Brand Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.6 }}
+              className="mb-6 flex justify-center lg:justify-start"
+            >
+              <img 
+                src={logo} 
+                alt="Shahi Serve" 
+                className="h-24 md:h-32 lg:h-36 w-auto drop-shadow-2xl"
+              />
+            </motion.div>
+            
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
