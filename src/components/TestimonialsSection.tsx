@@ -34,10 +34,11 @@ const testimonials = [
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-royal-cream relative overflow-hidden">
+    <section className="py-20 lg:py-28 relative overflow-hidden" style={{ backgroundColor: '#F4E6AD' }}>
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-royal-gold/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-royal-navy/5 rounded-full translate-x-1/2 translate-y-1/2" />
+      <div className="absolute top-0 left-0 w-64 h-64 bg-royal-gold/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-royal-navy/10 rounded-full translate-x-1/2 translate-y-1/2" />
+      <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(229, 189, 130, 0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(23, 63, 98, 0.1) 0%, transparent 50%)' }} />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
