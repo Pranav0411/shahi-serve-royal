@@ -63,12 +63,12 @@ export const InstagramSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-orange-500/20 mb-6">
             <Instagram className="w-4 h-4 text-pink-400" />
-            <span className="text-royal-cream-light text-sm font-medium uppercase tracking-wider">Join the Community</span>
+            <span className="text-royal-cream-light text-sm font-medium uppercase tracking-wider font-body">Join the Community</span>
           </div>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-royal-cream-light leading-tight mb-4">
             Follow the <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent italic">Flavor</span>
           </h2>
-          <p className="text-royal-cream/70 text-lg max-w-2xl mx-auto mb-6">
+          <p className="text-royal-cream/70 text-lg max-w-2xl mx-auto mb-6 font-body">
             Join 50K+ foodies who can't stop sharing their Shahi Serve moments
           </p>
           <a
@@ -131,12 +131,12 @@ export const InstagramSection = () => {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300 font-body"
           >
             <Instagram className="w-5 h-5" />
             <span>Follow Us on Instagram</span>
           </a>
-          <p className="text-royal-cream/50 text-sm mt-4">
+          <p className="text-royal-cream/50 text-sm mt-4 font-body">
             Tag us in your posts for a chance to be featured! 📸
           </p>
         </motion.div>

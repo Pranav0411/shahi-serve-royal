@@ -49,12 +49,12 @@ export const BestsellersSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-royal-gold/20 mb-6">
             <Flame className="w-4 h-4 text-royal-gold" />
-            <span className="text-royal-gold text-sm font-medium uppercase tracking-wider">Fan Favorites</span>
+            <span className="text-royal-gold text-sm font-medium uppercase tracking-wider font-body">Fan Favorites</span>
           </div>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-royal-cream-light leading-tight mb-4">
             Our <span className="text-royal-gold italic">Bestsellers</span>
           </h2>
-          <p className="text-royal-cream/70 text-lg max-w-2xl mx-auto">
+          <p className="text-royal-cream/70 text-lg max-w-2xl mx-auto font-body">
             The ones everyone's talking about. Join thousands who've made these their go-to comfort food.
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ export const BestsellersSection = () => {
                   <h3 className="font-heading text-xl text-royal-cream-light mb-2 group-hover:text-royal-gold transition-colors duration-300">
                     {item.name}
                   </h3>
-                  <p className="text-royal-cream/60 text-sm mb-4">{item.tagline}</p>
+                  <p className="text-royal-cream/60 text-sm mb-4 font-body">{item.tagline}</p>
                   
                   {/* Rating */}
                   <div className="flex items-center gap-3">
@@ -109,7 +109,7 @@ export const BestsellersSection = () => {
                       ))}
                     </div>
                     <span className="text-royal-cream-light font-semibold">{item.rating}</span>
-                    <span className="text-royal-cream/50 text-sm">({item.reviews.toLocaleString()} reviews)</span>
+                    <span className="text-royal-cream/50 text-sm font-body">({item.reviews.toLocaleString()} reviews)</span>
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ export const BestsellersSection = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <button className="inline-flex items-center gap-2 px-8 py-4 bg-royal-gold text-royal-navy font-semibold rounded-full hover:bg-royal-gold-light transition-colors duration-300 shadow-lg hover:shadow-royal-gold/25">
+          <button className="inline-flex items-center gap-2 px-8 py-4 bg-royal-gold text-royal-navy font-semibold rounded-full hover:bg-royal-gold-light transition-colors duration-300 shadow-lg hover:shadow-royal-gold/25 font-body">
             <span>Shop All Bestsellers</span>
             <TrendingUp className="w-5 h-5" />
           </button>
