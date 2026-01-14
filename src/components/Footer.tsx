@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Facebook, Twitter, Mail, Phone, MapPin, ShieldCheck } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const footerLinks = {
@@ -134,8 +134,31 @@ export const Footer = () => {
           </motion.div>
         </div>
 
+        {/* FSSAI Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="border-t border-royal-navy-light pt-8 mt-8"
+        >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 p-4 bg-royal-navy-light/50 rounded-xl">
+            <div className="flex items-center gap-3">
+              <ShieldCheck className="w-8 h-8 text-royal-gold" />
+              <div>
+                <p className="text-royal-cream-light font-semibold text-sm">FSSAI Licensed</p>
+                <p className="text-royal-gold font-mono text-lg tracking-wider">12345678901234</p>
+              </div>
+            </div>
+            <div className="hidden sm:block w-px h-10 bg-royal-cream/20" />
+            <p className="text-royal-cream/60 text-xs text-center sm:text-left max-w-xs">
+              Your safety is our priority. All our products are FSSAI certified for quality and hygiene.
+            </p>
+          </div>
+        </motion.div>
+
         {/* Bottom Bar */}
-        <div className="border-t border-royal-navy-light pt-8 mt-8">
+        <div className="border-t border-royal-navy-light pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-royal-cream/50 text-sm">
               © 2026 Shahi Serve. All rights reserved.
