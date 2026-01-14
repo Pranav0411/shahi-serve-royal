@@ -65,12 +65,12 @@ export const CreativeWaysSection = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-royal-navy/10 mb-6">
             <ChefHat className="w-4 h-4 text-royal-navy" />
-            <span className="text-royal-navy text-sm font-medium uppercase tracking-wider">Get Creative</span>
+            <span className="text-royal-navy text-sm font-medium uppercase tracking-wider font-body">Get Creative</span>
           </div>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-royal-navy leading-tight mb-4">
             Ways to <span className="text-royal-gold-rich italic">Enjoy</span>
           </h2>
-          <p className="text-royal-navy/70 text-lg max-w-2xl mx-auto">
+          <p className="text-royal-navy/70 text-lg max-w-2xl mx-auto font-body">
             Our kebabs are versatile AF. Here's how our community loves to switch things up.
           </p>
         </motion.div>
@@ -97,12 +97,12 @@ export const CreativeWaysSection = () => {
                 <h3 className="font-heading text-xl text-royal-navy mb-2 group-hover:text-royal-gold-rich transition-colors duration-300">
                   {idea.title}
                 </h3>
-                <p className="text-royal-navy/70 text-sm mb-4 leading-relaxed">
+                <p className="text-royal-navy/70 text-sm mb-4 leading-relaxed font-body">
                   {idea.description}
                 </p>
                 
                 {/* Accent Tag */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-royal-gold/20 text-royal-navy text-xs font-medium">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-royal-gold/20 text-royal-navy text-xs font-medium font-body">
                   <Sparkles className="w-3 h-3" />
                   {idea.accent}
                 </div>
@@ -119,8 +119,8 @@ export const CreativeWaysSection = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center mt-12"
         >
-          <p className="text-royal-navy/60 text-sm mb-4">Got a creative recipe? Share it with us!</p>
-          <div className="inline-flex items-center gap-2 text-royal-navy font-semibold">
+          <p className="text-royal-navy/60 text-sm mb-4 font-body">Got a creative recipe? Share it with us!</p>
+          <div className="inline-flex items-center gap-2 text-royal-navy font-semibold font-body">
             <span className="text-lg">#ShahiServeCreations</span>
             <span className="text-royal-gold text-2xl">✨</span>
           </div>
