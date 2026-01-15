@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingCart, User } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { useCart } from "@/context/CartContext";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -12,7 +13,7 @@ const navItems = [
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [cartCount] = useState(0);
+  const { totalItems, setIsCartOpen } = useCart();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-royal-navy/95 backdrop-blur-md">
@@ -41,12 +42,19 @@ export const Header = () => {
             <button className="p-2 text-royal-cream-light hover:text-royal-gold transition-colors">
               <User size={22} />
             </button>
-            <button className="relative p-2 text-royal-cream-light hover:text-royal-gold transition-colors">
+            <button 
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2 text-royal-cream-light hover:text-royal-gold transition-colors"
+            >
               <ShoppingCart size={22} />
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-royal-gold-rich text-royal-navy text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
-                  {cartCount}
-                </span>
+              {totalItems > 0 && (
+                <motion.span 
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="absolute -top-1 -right-1 bg-royal-gold-rich text-royal-navy text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center"
+                >
+                  {totalItems}
+                </motion.span>
               )}
             </button>
             <button className="btn-royal text-sm px-6 py-2">
@@ -88,8 +96,16 @@ export const Header = () => {
                 <button className="flex-1 btn-royal text-sm py-3">
                   Order Now
                 </button>
-                <button className="p-3 text-royal-cream-light border border-royal-gold/30 rounded-full">
+                <button 
+                  onClick={() => { setIsMenuOpen(false); setIsCartOpen(true); }}
+                  className="relative p-3 text-royal-cream-light border border-royal-gold/30 rounded-full"
+                >
                   <ShoppingCart size={20} />
+                  {totalItems > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-royal-gold-rich text-royal-navy text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                      {totalItems}
+                    </span>
+                  )}
                 </button>
               </div>
             </nav>
