@@ -60,20 +60,20 @@ export const BestsellersSection = () => {
         </motion.div>
 
         {/* Bestsellers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {bestsellers.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="group relative"
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group"
             >
-              <div className="relative overflow-hidden rounded-2xl bg-royal-navy-light border border-royal-gold/20 hover:border-royal-gold/40 transition-all duration-300">
+              <div className="relative overflow-hidden rounded-2xl bg-royal-navy-light border border-royal-gold/20 hover:border-royal-gold/40 transition-all duration-300 h-full">
                 {/* Badge */}
                 <div className="absolute top-4 left-4 z-20">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-royal-gold text-royal-navy">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-royal-gold text-royal-navy font-body">
                     {item.badge === "Trending" && <TrendingUp className="w-3 h-3" />}
                     {item.badge === "Most Loved" && <Star className="w-3 h-3 fill-current" />}
                     {item.badge === "Chef's Pick" && <Flame className="w-3 h-3" />}
@@ -82,21 +82,21 @@ export const BestsellersSection = () => {
                 </div>
 
                 {/* Image */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-royal-navy via-transparent to-transparent opacity-60" />
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="font-heading text-xl text-royal-cream-light mb-2 group-hover:text-royal-gold transition-colors duration-300">
+                <div className="p-6 lg:p-8">
+                  <h3 className="font-heading text-xl lg:text-2xl text-royal-cream-light mb-3 group-hover:text-royal-gold transition-colors duration-300">
                     {item.name}
                   </h3>
-                  <p className="text-royal-cream/60 text-sm mb-4 font-body">{item.tagline}</p>
+                  <p className="text-royal-cream/60 text-base mb-5 font-body">{item.tagline}</p>
                   
                   {/* Rating */}
                   <div className="flex items-center gap-3">
@@ -104,11 +104,11 @@ export const BestsellersSection = () => {
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className={`w-4 h-4 ${i < Math.floor(item.rating) ? 'text-royal-gold fill-royal-gold' : 'text-royal-cream/30'}`}
+                          className={`w-5 h-5 ${i < Math.floor(item.rating) ? 'text-royal-gold fill-royal-gold' : 'text-royal-cream/30'}`}
                         />
                       ))}
                     </div>
-                    <span className="text-royal-cream-light font-semibold">{item.rating}</span>
+                    <span className="text-royal-cream-light font-semibold text-lg">{item.rating}</span>
                     <span className="text-royal-cream/50 text-sm font-body">({item.reviews.toLocaleString()} reviews)</span>
                   </div>
                 </div>
