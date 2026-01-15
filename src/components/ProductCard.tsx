@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart, Check } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 interface PackSize {
   count: number;
@@ -16,14 +17,22 @@ interface ProductCardProps {
   isVeg?: boolean;
 }
 
-export const ProductCard = ({ name, description, image, packSizes, isVeg = false }: ProductCardProps) => {
+export const ProductCard = ({ id, name, description, image, packSizes, isVeg = false }: ProductCardProps) => {
   const [selectedPack, setSelectedPack] = useState(0);
   const [isAdding, setIsAdding] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
+  const { addToCart } = useCart();
 
   const handleAddToCart = () => {
     setIsAdding(true);
     setTimeout(() => {
+      addToCart({
+        id,
+        name,
+        image,
+        packSize: packSizes[selectedPack].count,
+        price: packSizes[selectedPack].price,
+      });
       setIsAdding(false);
       setIsAdded(true);
       setTimeout(() => setIsAdded(false), 2000);
