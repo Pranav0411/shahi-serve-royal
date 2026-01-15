@@ -143,9 +143,8 @@ export const ProductCard = ({ id, name, description, image, packSizes, isVeg = f
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0 }}
-                  className="flex items-center gap-2"
+                  className="flex items-center"
                 >
-                  <ShoppingCart size={18} />
                   <span className="whitespace-nowrap">Reserve this Delicacy</span>
                   <span>Add to Cart</span>
                 </motion.div>
