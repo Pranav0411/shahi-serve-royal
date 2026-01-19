@@ -1,50 +1,10 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ProductCard } from "./ProductCard";
-import productImg1 from "@/assets/product-galouti-1.jpg";
-import productImg2 from "@/assets/product-galouti-2.jpg";
-import productImg3 from "@/assets/product-galouti-3.jpg";
+import { products } from "@/data/products";
 
-const products = [
-  {
-    id: "1",
-    name: "Mutton Galouti Kebab",
-    description: "Melt-in-your-mouth delicacy from the royal kitchens of Lucknow. Made with finest mutton and 160 spices.",
-    image: productImg1,
-    packSizes: [
-      { count: 1, price: 299 },
-      { count: 3, price: 799 },
-      { count: 5, price: 1249 },
-    ],
-    isVeg: false,
-    isBestseller: true,
-  },
-  {
-    id: "2",
-    name: "Chicken Shammi Kebab",
-    description: "Succulent minced chicken kebabs infused with aromatic spices. A royal treat for your taste buds.",
-    image: productImg2,
-    packSizes: [
-      { count: 1, price: 249 },
-      { count: 3, price: 649 },
-      { count: 5, price: 999 },
-    ],
-    isVeg: false,
-    isBestseller: true,
-  },
-  {
-    id: "3",
-    name: "Seekh Kebab Royale",
-    description: "Hand-rolled skewered kebabs with a perfect blend of herbs and spices. Grilled to perfection.",
-    image: productImg3,
-    packSizes: [
-      { count: 1, price: 279 },
-      { count: 3, price: 749 },
-      { count: 5, price: 1149 },
-    ],
-    isVeg: false,
-    isBestseller: false,
-  },
-];
+// Show only first 3 products on homepage
+const showcaseProducts = products.slice(0, 3);
 
 export const ProductShowcase = () => {
   return (
@@ -71,7 +31,7 @@ export const ProductShowcase = () => {
 
         {/* Products Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {products.map((product, index) => (
+          {showcaseProducts.map((product, index) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 30 }}
@@ -92,9 +52,12 @@ export const ProductShowcase = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <button className="btn-royal-outline border-royal-navy text-royal-navy hover:bg-royal-navy hover:text-royal-cream-light">
+          <Link 
+            to="/products"
+            className="btn-royal-outline border-royal-navy text-royal-navy hover:bg-royal-navy hover:text-royal-cream-light inline-block"
+          >
             View All Products
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>
