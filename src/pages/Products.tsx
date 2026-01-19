@@ -28,9 +28,12 @@ const Products = () => {
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-royal-cream-light mt-4 mb-6">
                 Signature Delicacies
               </h1>
-              <p className="text-royal-cream/80 max-w-2xl mx-auto text-lg">
+              <p className="text-royal-cream/80 max-w-2xl mx-auto text-lg mb-6">
                 Each dish crafted with the same indulgence and perfection once reserved for kings. 
                 Experience the authentic taste of royal kitchens.
+              </p>
+              <p className="text-royal-gold/70 text-sm">
+                FSSAI License No: 12345678901234
               </p>
             </motion.div>
           </div>
@@ -73,54 +76,6 @@ const Products = () => {
           </div>
         </section>
 
-        {/* Info Section */}
-        <section className="py-16 bg-royal-cream">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="p-6"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-royal-gold/20 flex items-center justify-center">
-                  <span className="text-2xl">🍖</span>
-                </div>
-                <h3 className="font-heading text-xl text-royal-navy mb-2">Premium Quality</h3>
-                <p className="text-muted-foreground">Only the finest cuts and freshest ingredients make it to your table</p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="p-6"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-royal-gold/20 flex items-center justify-center">
-                  <span className="text-2xl">⏱️</span>
-                </div>
-                <h3 className="font-heading text-xl text-royal-navy mb-2">Ready in Minutes</h3>
-                <p className="text-muted-foreground">From frozen to feast in under 10 minutes with our easy cooking guide</p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="p-6"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-royal-gold/20 flex items-center justify-center">
-                  <span className="text-2xl">🚚</span>
-                </div>
-                <h3 className="font-heading text-xl text-royal-navy mb-2">Fresh Delivery</h3>
-                <p className="text-muted-foreground">Delivered frozen to preserve authentic taste and quality</p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
