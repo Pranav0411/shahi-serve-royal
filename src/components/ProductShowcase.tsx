@@ -16,6 +16,7 @@ const products = [
       { count: 5, price: 1249 },
     ],
     isVeg: false,
+    isBestseller: true,
   },
   {
     id: "2",
@@ -28,6 +29,7 @@ const products = [
       { count: 5, price: 999 },
     ],
     isVeg: false,
+    isBestseller: true,
   },
   {
     id: "3",
@@ -40,6 +42,7 @@ const products = [
       { count: 5, price: 1149 },
     ],
     isVeg: false,
+    isBestseller: false,
   },
 ];
 

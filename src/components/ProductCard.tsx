@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingCart, Check } from "lucide-react";
+import { ShoppingCart, Check, Crown } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 
 interface PackSize {
@@ -15,9 +15,10 @@ interface ProductCardProps {
   image: string;
   packSizes: PackSize[];
   isVeg?: boolean;
+  isBestseller?: boolean;
 }
 
-export const ProductCard = ({ id, name, description, image, packSizes, isVeg = false }: ProductCardProps) => {
+export const ProductCard = ({ id, name, description, image, packSizes, isVeg = false, isBestseller = false }: ProductCardProps) => {
   const [selectedPack, setSelectedPack] = useState(0);
   const [isAdding, setIsAdding] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
@@ -54,6 +55,14 @@ export const ProductCard = ({ id, name, description, image, packSizes, isVeg = f
           alt={name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
+        
+        {/* Bestseller Badge */}
+        {isBestseller && (
+          <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-semibold bg-royal-gold text-royal-navy flex items-center gap-1.5 shadow-lg">
+            <Crown size={12} className="fill-current" />
+            Bestseller
+          </div>
+        )}
         
         {/* Veg/Non-Veg Badge */}
         <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold ${
@@ -146,7 +155,7 @@ export const ProductCard = ({ id, name, description, image, packSizes, isVeg = f
                   className="flex items-center gap-2"
                 >
                   <ShoppingCart size={18} />
-                  <span>Add to Cart</span>
+                  <span className="whitespace-nowrap">Reserve this Delicacy</span>
                 </motion.div>
               )}
             </AnimatePresence>
