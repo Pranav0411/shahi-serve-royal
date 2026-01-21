@@ -164,7 +164,7 @@ export const TrustSection = () => {
               className="mt-10"
             >
               <button className="btn-royal text-lg px-8 py-4">
-                Order now
+                Order Now
               </button>
             </motion.div>
           </motion.div>
