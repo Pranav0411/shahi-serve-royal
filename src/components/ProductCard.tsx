@@ -155,7 +155,7 @@ export const ProductCard = ({ id, name, description, image, packSizes, isVeg = f
                   className="flex items-center gap-2"
                 >
                   <ShoppingCart size={18} />
-                  <span className="whitespace-nowrap">Reserve this Delicacy</span>
+                  <span className="whitespace-nowrap">Add to cart</span>
                 </motion.div>
               )}
             </AnimatePresence>
