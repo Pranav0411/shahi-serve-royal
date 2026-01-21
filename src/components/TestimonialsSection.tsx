@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -65,61 +72,72 @@ export const TestimonialsSection = () => {
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group"
-            >
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 relative">
-                {/* Quote Icon */}
-                <div className="absolute top-6 right-6">
-                  <Quote className="w-10 h-10 text-royal-gold/20" />
-                </div>
-                
-                {/* Rating Stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 text-royal-gold fill-royal-gold"
-                    />
-                  ))}
-                </div>
-                
-                {/* Review Text */}
-                <p className="text-royal-navy/80 text-lg leading-relaxed mb-6 italic">
-                  "{testimonial.review}"
-                </p>
-                
-                {/* Customer Info */}
-                <div className="flex items-center gap-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-royal-gold/30"
-                  />
-                  <div>
-                    <h4 className="font-heading font-semibold text-royal-navy">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-royal-navy/60 text-sm">
-                      {testimonial.location}
+        {/* Testimonials Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl mx-auto px-12"
+        >
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {testimonials.map((testimonial) => (
+                <CarouselItem key={testimonial.name} className="md:basis-1/2 lg:basis-1/2">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 relative h-full">
+                    {/* Quote Icon */}
+                    <div className="absolute top-6 right-6">
+                      <Quote className="w-10 h-10 text-royal-gold/20" />
+                    </div>
+                    
+                    {/* Rating Stars */}
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="w-5 h-5 text-royal-gold fill-royal-gold"
+                        />
+                      ))}
+                    </div>
+                    
+                    {/* Review Text */}
+                    <p className="text-royal-navy/80 text-lg leading-relaxed mb-6 italic">
+                      "{testimonial.review}"
                     </p>
+                    
+                    {/* Customer Info */}
+                    <div className="flex items-center gap-4">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-14 h-14 rounded-full object-cover border-2 border-royal-gold/30"
+                      />
+                      <div>
+                        <h4 className="font-heading font-semibold text-royal-navy">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-royal-navy/60 text-sm">
+                          {testimonial.location}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Decorative Bottom Border */}
+                    <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-royal-gold/30 to-transparent rounded-full" />
                   </div>
-                </div>
-                
-                {/* Decorative Bottom Border */}
-                <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-royal-gold/30 to-transparent rounded-full" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="border-royal-gold/30 text-royal-navy hover:bg-royal-gold/10 hover:text-royal-navy" />
+            <CarouselNext className="border-royal-gold/30 text-royal-navy hover:bg-royal-gold/10 hover:text-royal-navy" />
+          </Carousel>
+        </motion.div>
 
         {/* Trust Indicators */}
         <motion.div
