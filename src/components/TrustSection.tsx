@@ -1,38 +1,28 @@
 import { motion } from "framer-motion";
-import { Clock, Leaf, Drumstick, ThermometerSun, Shield, Award, Check } from "lucide-react";
+import { RefreshCw, Award, Heart, Sparkles, Check } from "lucide-react";
 import productImage from "@/assets/product-galouti-1.jpg";
 import pattern from "@/assets/pattern.png";
 
 const trustFeatures = [
   {
-    icon: Clock,
-    title: "Ready in 5 Minutes",
-    description: "From freezer to feast in just 5 minutes",
-  },
-  {
-    icon: Leaf,
+    icon: RefreshCw,
     title: "Zero Preservatives",
-    description: "All heritage, none of the chemicals",
-  },
-  {
-    icon: Drumstick,
-    title: "100% Premium Protein",
-    description: "40g protein per serving guaranteed",
-  },
-  {
-    icon: ThermometerSun,
-    title: "Three Ways to Heat",
-    description: "Microwave, stove, or boiling water",
-  },
-  {
-    icon: Shield,
-    title: "FSSAI Certified",
-    description: "Highest food safety standards",
+    description: "Every meal is crafted without any artificial preservatives or additives — just pure, wholesome ingredients.",
   },
   {
     icon: Award,
-    title: "Royal Recipes",
-    description: "Authentic royal kitchen heritage",
+    title: "Heritage Recipes",
+    description: "Authentic regional Indian recipes passed down through generations, perfected by master chefs.",
+  },
+  {
+    icon: Heart,
+    title: "Premium Ingredients",
+    description: "Pure ghee, real protein, and high-grade spices sourced from the finest suppliers across India.",
+  },
+  {
+    icon: Sparkles,
+    title: "Ready to Serve",
+    description: "Shelf-stable convenience without compromising on taste, hygiene, or nutritional value.",
   },
 ];
 
