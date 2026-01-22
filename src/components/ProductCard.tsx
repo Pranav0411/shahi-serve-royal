@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingCart, Check, Crown } from "lucide-react";
+import { ShoppingCart, Check } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { ProductTag, TagType } from "./ProductTag";
 
 interface PackSize {
   count: number;
@@ -14,11 +15,10 @@ interface ProductCardProps {
   description: string;
   image: string;
   packSizes: PackSize[];
-  isVeg?: boolean;
-  isBestseller?: boolean;
+  tagType?: TagType;
 }
 
-export const ProductCard = ({ id, name, description, image, packSizes, isVeg = false, isBestseller = false }: ProductCardProps) => {
+export const ProductCard = ({ id, name, description, image, packSizes, tagType }: ProductCardProps) => {
   const [selectedPack, setSelectedPack] = useState(0);
   const [isAdding, setIsAdding] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
@@ -56,22 +56,8 @@ export const ProductCard = ({ id, name, description, image, packSizes, isVeg = f
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         
-        {/* Bestseller Badge */}
-        {isBestseller && (
-          <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-semibold bg-royal-gold text-royal-navy flex items-center gap-1.5 shadow-lg">
-            <Crown size={12} className="fill-current" />
-            Bestseller
-          </div>
-        )}
-        
-        {/* Veg/Non-Veg Badge */}
-        <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold ${
-          isVeg 
-            ? 'bg-green-500/90 text-white' 
-            : 'bg-red-600/90 text-white'
-        }`}>
-          {isVeg ? '🌱 Veg' : '🍖 Non-Veg'}
-        </div>
+        {/* Premium Tag Badge */}
+        {tagType && <ProductTag type={tagType} />}
         
         {/* Quick Add Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-royal-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

@@ -9,6 +9,8 @@ export interface PackSize {
   price: number;
 }
 
+export type TagType = "bestseller" | "chefSpecial" | "topPick" | "new" | "limited";
+
 export interface Product {
   id: string;
   name: string;
@@ -16,8 +18,7 @@ export interface Product {
   longDescription?: string;
   image: string;
   packSizes: PackSize[];
-  isVeg: boolean;
-  isBestseller: boolean;
+  tagType?: TagType;
   ingredients?: string[];
   servingSize?: string;
   cookingTime?: string;
@@ -35,8 +36,7 @@ export const products: Product[] = [
       { count: 3, price: 799 },
       { count: 5, price: 1249 },
     ],
-    isVeg: false,
-    isBestseller: true,
+    tagType: "bestseller",
     ingredients: ["Premium Mutton", "Raw Papaya", "Cashew Paste", "160 Royal Spices", "Clarified Butter"],
     servingSize: "4 pieces per pack",
     cookingTime: "5-7 minutes",
@@ -52,8 +52,7 @@ export const products: Product[] = [
       { count: 3, price: 649 },
       { count: 5, price: 999 },
     ],
-    isVeg: false,
-    isBestseller: true,
+    tagType: "chefSpecial",
     ingredients: ["Tender Chicken", "Roasted Chana Dal", "Fresh Herbs", "Aromatic Spices", "Ghee"],
     servingSize: "4 pieces per pack",
     cookingTime: "4-6 minutes",
@@ -69,8 +68,7 @@ export const products: Product[] = [
       { count: 3, price: 749 },
       { count: 5, price: 1149 },
     ],
-    isVeg: false,
-    isBestseller: false,
+    tagType: "new",
     ingredients: ["Select Mutton Mince", "Fresh Coriander", "Mint Leaves", "Green Chilies", "Ginger-Garlic"],
     servingSize: "4 pieces per pack",
     cookingTime: "6-8 minutes",
@@ -86,8 +84,7 @@ export const products: Product[] = [
       { count: 3, price: 949 },
       { count: 5, price: 1449 },
     ],
-    isVeg: false,
-    isBestseller: false,
+    tagType: "topPick",
     ingredients: ["Premium Mutton", "Cashew Paste", "Fresh Cream", "Saffron", "Dry Fruits", "Rose Water"],
     servingSize: "Serves 2-3",
     cookingTime: "8-10 minutes",
@@ -103,8 +100,7 @@ export const products: Product[] = [
       { count: 3, price: 899 },
       { count: 5, price: 1349 },
     ],
-    isVeg: false,
-    isBestseller: false,
+    tagType: "limited",
     ingredients: ["Tender Mutton", "Caramelized Onions", "Tomatoes", "Whole Spices", "Fresh Ginger", "Turmeric"],
     servingSize: "Serves 2-3",
     cookingTime: "8-10 minutes",
