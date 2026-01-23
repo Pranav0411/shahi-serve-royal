@@ -40,9 +40,13 @@ export const Header = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
-            <button className="p-2 text-royal-cream-light hover:text-royal-gold transition-colors">
-              <User size={22} />
-            </button>
+            <Link 
+              to="/login" 
+              className="flex items-center gap-2 px-4 py-2 text-royal-cream-light hover:text-royal-gold transition-colors border border-royal-gold/30 rounded-full"
+            >
+              <User size={18} />
+              <span className="text-sm font-medium">Login</span>
+            </Link>
             <button 
               onClick={() => setIsCartOpen(true)}
               className="relative p-2 text-royal-cream-light hover:text-royal-gold transition-colors"
