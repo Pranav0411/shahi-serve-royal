@@ -90,14 +90,15 @@ export const Hero = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="relative min-h-screen bg-royal-navy overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(var(--royal-navy)) 0%, hsl(215, 55%, 18%) 100%)' }}>
       {/* Background Pattern Overlay */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-10">
         <div 
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, hsl(var(--royal-gold) / 0.1) 0%, transparent 50%),
-                              radial-gradient(circle at 80% 50%, hsl(var(--royal-gold) / 0.05) 0%, transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at 20% 50%, hsl(var(--royal-gold) / 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 50%, hsl(var(--royal-gold) / 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 50% 100%, hsl(var(--royal-cream) / 0.05) 0%, transparent 40%)`,
           }}
         />
       </div>

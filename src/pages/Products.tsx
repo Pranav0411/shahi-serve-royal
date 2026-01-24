@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { ProductCard } from "@/components/ProductCard";
 import { products } from "@/data/products";
 
@@ -75,6 +76,8 @@ const Products = () => {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 };

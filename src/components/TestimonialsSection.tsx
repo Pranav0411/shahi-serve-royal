@@ -1,12 +1,8 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { useCallback, useEffect, useState } from "react";
 
 const testimonials = [
   {
@@ -40,6 +36,38 @@ const testimonials = [
 ];
 
 export const TestimonialsSection = () => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  
+  const autoplayPlugin = Autoplay({ delay: 3500, stopOnInteraction: false });
+  
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "start" },
+    [autoplayPlugin]
+  );
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index);
+    },
+    [emblaApi]
+  );
+
   return (
     <section className="py-20 lg:py-28 relative overflow-hidden" style={{ backgroundColor: '#F4E6AD' }}>
       {/* Decorative Elements */}
@@ -72,24 +100,21 @@ export const TestimonialsSection = () => {
           </p>
         </motion.div>
 
-        {/* Testimonials Carousel */}
+        {/* Auto-Playing Testimonials Carousel */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto px-12"
+          className="max-w-5xl mx-auto"
         >
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.name} className="md:basis-1/2 lg:basis-1/2">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
+              {testimonials.map((testimonial, index) => (
+                <div 
+                  key={testimonial.name} 
+                  className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] px-3"
+                >
                   <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 relative h-full">
                     {/* Quote Icon */}
                     <div className="absolute top-6 right-6">
@@ -131,12 +156,26 @@ export const TestimonialsSection = () => {
                     {/* Decorative Bottom Border */}
                     <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-transparent via-royal-gold/30 to-transparent rounded-full" />
                   </div>
-                </CarouselItem>
+                </div>
               ))}
-            </CarouselContent>
-            <CarouselPrevious className="border-royal-gold/30 text-royal-navy hover:bg-royal-gold/10 hover:text-royal-navy" />
-            <CarouselNext className="border-royal-gold/30 text-royal-navy hover:bg-royal-gold/10 hover:text-royal-navy" />
-          </Carousel>
+            </div>
+          </div>
+
+          {/* Navigation Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollTo(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  selectedIndex === index
+                    ? "bg-royal-navy w-6"
+                    : "bg-royal-navy/30 hover:bg-royal-navy/50"
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
         </motion.div>
 
         {/* Trust Indicators */}
