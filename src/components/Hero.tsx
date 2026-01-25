@@ -147,20 +147,7 @@ export const Hero = () => {
                           className="text-center lg:text-left max-w-xl mx-auto lg:mx-0 space-y-3 md:space-y-0"
                         >
                           {/* Logo - Only on first slide */}
-                          {index === 0 && (
-                            <motion.div
-                              initial={{ opacity: 0, scale: 0.9 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              transition={{ delay: 0.1, duration: 0.5 }}
-                              className="mb-3 md:mb-6 flex justify-center lg:justify-start"
-                            >
-                              <img
-                                src={logo}
-                                alt="Shahi Serve"
-                                className="h-10 md:h-16 lg:h-20 w-auto drop-shadow-2xl"
-                              />
-                            </motion.div>
-                          )}
+                          
 
                           {/* Tagline */}
                           <motion.span
