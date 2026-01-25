@@ -90,7 +90,7 @@ export const Hero = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="relative min-h-[85vh] overflow-hidden bg-hero-gradient">
+    <section className="relative min-h-[85vh] overflow-hidden bg-hero-gradient pt-20 lg:pt-24">
       {/* Radial Spotlight Effect */}
       <div 
         className="absolute inset-0 pointer-events-none"
@@ -135,7 +135,7 @@ export const Hero = () => {
               <div className="flex flex-col lg:flex-row h-full">
                 {/* Left Content - 40% on desktop */}
                 <div className="lg:w-[40%] h-[50%] lg:h-full flex items-center order-2 lg:order-1 relative z-10">
-                  <div className="container mx-auto px-6 lg:px-12 py-8 lg:py-0">
+                  <div className="container mx-auto px-6 lg:px-12 py-8 lg:py-8">
                     <AnimatePresence mode="wait">
                       {selectedIndex === index && (
                         <motion.div
