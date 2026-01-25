@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap');
 
+/* Hero Background Gradient - Cinematic Spotlight Effect */
+.bg-hero-gradient {
+  background: radial-gradient(ellipse 120% 100% at 20% 50%, hsl(215, 50%, 22%) 0%, hsl(215, 55%, 15%) 50%, hsl(215, 60%, 10%) 100%);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
