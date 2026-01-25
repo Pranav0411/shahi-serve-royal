@@ -90,7 +90,7 @@ export const Hero = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="relative min-h-[85vh] overflow-hidden bg-hero-gradient pt-20 lg:pt-24">
+    <section className="relative min-h-[65vh] md:min-h-[85vh] overflow-hidden bg-hero-gradient pt-16 md:pt-20 lg:pt-24">
       {/* Radial Spotlight Effect */}
       <div 
         className="absolute inset-0 pointer-events-none"
@@ -124,7 +124,7 @@ export const Hero = () => {
       />
 
       {/* Carousel Container */}
-      <div className="relative h-[85vh]" ref={emblaRef}>
+      <div className="relative h-[65vh] md:h-[85vh]" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide, index) => (
             <div
@@ -134,8 +134,8 @@ export const Hero = () => {
               {/* Mobile Layout: Image Top, Text Bottom */}
               <div className="flex flex-col lg:flex-row h-full">
                 {/* Left Content - 40% on desktop */}
-                <div className="lg:w-[40%] h-[50%] lg:h-full flex items-center order-2 lg:order-1 relative z-10">
-                  <div className="container mx-auto px-6 lg:px-12 py-8 lg:py-8">
+                <div className="lg:w-[40%] h-[60%] lg:h-full flex items-center order-2 lg:order-1 relative z-10">
+                  <div className="container mx-auto px-4 md:px-6 lg:px-12 py-4 md:py-8">
                     <AnimatePresence mode="wait">
                       {selectedIndex === index && (
                         <motion.div
@@ -144,7 +144,7 @@ export const Hero = () => {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -30 }}
                           transition={{ duration: 0.7, ease: "easeOut" }}
-                          className="text-center lg:text-left max-w-xl mx-auto lg:mx-0"
+                          className="text-center lg:text-left max-w-xl mx-auto lg:mx-0 space-y-3 md:space-y-0"
                         >
                           {/* Logo - Only on first slide */}
                           {index === 0 && (
@@ -152,12 +152,12 @@ export const Hero = () => {
                               initial={{ opacity: 0, scale: 0.9 }}
                               animate={{ opacity: 1, scale: 1 }}
                               transition={{ delay: 0.1, duration: 0.5 }}
-                              className="mb-6 flex justify-center lg:justify-start"
+                              className="mb-3 md:mb-6 flex justify-center lg:justify-start"
                             >
                               <img
                                 src={logo}
                                 alt="Shahi Serve"
-                                className="h-16 md:h-20 w-auto drop-shadow-2xl"
+                                className="h-10 md:h-16 lg:h-20 w-auto drop-shadow-2xl"
                               />
                             </motion.div>
                           )}
@@ -167,7 +167,7 @@ export const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
-                            className="inline-block text-royal-gold font-medium tracking-[0.3em] uppercase text-xs md:text-sm mb-4"
+                            className="inline-block text-royal-gold font-medium tracking-[0.2em] md:tracking-[0.3em] uppercase text-[10px] md:text-xs lg:text-sm mb-2 md:mb-4"
                           >
                             Fit for a King
                           </motion.span>
@@ -177,7 +177,7 @@ export const Hero = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3, duration: 0.6 }}
-                            className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] mb-6"
+                            className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] mb-3 md:mb-6"
                           >
                             <span className="text-royal-cream-light block">{slide.headline}</span>
                             <span className="text-royal-gold block mt-1">{slide.highlightedText}</span>
@@ -188,7 +188,7 @@ export const Hero = () => {
                             initial={{ opacity: 0, scaleX: 0 }}
                             animate={{ opacity: 1, scaleX: 1 }}
                             transition={{ delay: 0.4, duration: 0.5 }}
-                            className="w-24 h-[2px] bg-gradient-to-r from-royal-gold via-royal-gold-light to-transparent mx-auto lg:mx-0 mb-6"
+                            className="w-16 md:w-24 h-[2px] bg-gradient-to-r from-royal-gold via-royal-gold-light to-transparent mx-auto lg:mx-0 mb-3 md:mb-6"
                           />
 
                           {/* Subtext */}
@@ -196,7 +196,7 @@ export const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.5 }}
-                            className="text-royal-cream/80 text-base md:text-lg lg:text-xl max-w-md mx-auto lg:mx-0 mb-8 font-light"
+                            className="text-royal-cream/80 text-sm md:text-base lg:text-lg max-w-md mx-auto lg:mx-0 mb-4 md:mb-8 font-light"
                           >
                             {slide.subtext}
                           </motion.p>
@@ -209,7 +209,7 @@ export const Hero = () => {
                           >
                             <a
                               href={slide.ctaLink}
-                              className="inline-block bg-royal-gold hover:bg-royal-gold-rich text-royal-navy font-semibold text-base md:text-lg px-8 md:px-12 py-4 md:py-5 rounded-sm transition-all duration-300 shadow-[0_0_30px_rgba(229,189,130,0.4)] hover:shadow-[0_0_50px_rgba(229,189,130,0.6)] hover:scale-105"
+                              className="inline-block bg-royal-gold hover:bg-royal-gold-rich text-royal-navy font-semibold text-sm md:text-base lg:text-lg px-6 md:px-10 lg:px-12 py-3 md:py-4 lg:py-5 rounded-sm transition-all duration-300 shadow-[0_0_30px_rgba(229,189,130,0.4)] hover:shadow-[0_0_50px_rgba(229,189,130,0.6)] hover:scale-105"
                             >
                               {slide.ctaText}
                             </a>
@@ -221,7 +221,7 @@ export const Hero = () => {
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: 0.7, duration: 0.5 }}
-                              className="flex flex-wrap gap-4 md:gap-6 justify-center lg:justify-start mt-8 md:mt-10"
+                              className="hidden md:flex flex-wrap gap-4 md:gap-6 justify-center lg:justify-start mt-6 md:mt-10"
                             >
                               {[
                                 { icon: "⏱️", text: "Ready in 5 Mins" },
@@ -245,7 +245,7 @@ export const Hero = () => {
                 </div>
 
                 {/* Right Image - 60% on desktop, Full Height Edge-to-Edge */}
-                <div className="lg:w-[60%] h-[50%] lg:h-full order-1 lg:order-2 relative">
+                <div className="lg:w-[60%] h-[40%] lg:h-full order-1 lg:order-2 relative">
                   <AnimatePresence mode="wait">
                     {selectedIndex === index && (
                       <motion.div
