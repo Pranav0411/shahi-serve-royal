@@ -22,8 +22,11 @@ export const ProductShowcase = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8 md:mb-14"
         >
-          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-foreground mt-3 mb-4">
+          <span className="text-royal-gold-rich font-medium tracking-widest uppercase text-sm">
             The Royal Menu
+          </span>
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-foreground mt-3 mb-4">
+            Signature Delicacies
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
             Each dish crafted with the same indulgence and perfection once reserved for kings.
