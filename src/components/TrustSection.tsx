@@ -7,22 +7,18 @@ const trustFeatures = [
   {
     icon: RefreshCw,
     title: "Zero Preservatives",
-    description: "Every meal is crafted without any artificial preservatives or additives — just pure, wholesome ingredients.",
   },
   {
     icon: Award,
     title: "Heritage Recipes",
-    description: "Authentic regional Indian recipes passed down through generations, perfected by master chefs.",
   },
   {
     icon: Heart,
     title: "Premium Ingredients",
-    description: "Pure ghee, real protein, and high-grade spices sourced from the finest suppliers across India.",
   },
   {
     icon: Sparkles,
     title: "Ready to Serve",
-    description: "Shelf-stable convenience without compromising on taste, hygiene, or nutritional value.",
   },
 ];
 
